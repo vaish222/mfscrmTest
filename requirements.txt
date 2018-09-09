@@ -5,3 +5,4 @@ django-mathfilters==0.4.0
 gunicorn==19.9.0
 pytz==2018.5
 whitenoise==4.0
+pyscopg2==2.7.5
