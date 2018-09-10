@@ -144,7 +144,7 @@ def product_new(request):
            product = form.save(commit=False)
            product.created_date = timezone.now()
            product.save()
-           products = Service.objects.filter(created_date__lte=timezone.now())
+           products = Product.objects.filter(created_date__lte=timezone.now())
            return render(request, 'crm/product_list.html',
                          {'products': products})
    else:
