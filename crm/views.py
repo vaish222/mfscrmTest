@@ -22,6 +22,22 @@ def customer_list(request):
                  {'customers': customer})
 
 @login_required
+def customer_new(request):
+   if request.method == "POST":
+       form = CustomerForm(request.POST)
+       if form.is_valid():
+           customer = form.save(commit=False)
+           customer.created_date = timezone.now()
+           customer.save()
+           customers = Customer.objects.filter(created_date__lte=timezone.now())
+           return render(request, 'crm/customer_list.html',
+                         {'customers': customers})
+   else:
+       form = CustomerForm()
+       # print("Else")
+   return render(request, 'crm/customer_new.html', {'form': form})
+
+@login_required
 def customer_edit(request, pk):
    customer = get_object_or_404(Customer, pk=pk)
    if request.method == "POST":
@@ -130,9 +146,9 @@ def product_new(request):
            product.save()
            products = Service.objects.filter(created_date__lte=timezone.now())
            return render(request, 'crm/product_list.html',
-                         {'services': products})
+                         {'products': products})
    else:
-       form = ServiceForm()
+       form = ProductForm()
        # print("Else")
    return render(request, 'crm/product_new.html', {'form': form})
 
