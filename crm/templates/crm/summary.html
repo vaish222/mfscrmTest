@@ -32,7 +32,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ sum_service_charge.service_charge__sum|add:sum_product_charge.charge__sum|intcomma }}</td>
+                <td>{{ sum_service_charge.service_charge__sum|add:sum_product_charge.charge__sum|floatformat:2|intcomma }}</td>
 
             </tr>
         </tbody>
@@ -79,7 +79,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ sum_service_charge.service_charge__sum|intcomma }}</td>
+                <td>{{ sum_service_charge.service_charge__sum|floatformat:2|intcomma }}</td>
             </tr>
         </tbody>
         </table>
@@ -120,7 +120,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ sum_product_charge.charge__sum|intcomma }}</td>
+                <td>{{ sum_product_charge.charge__sum|floatformat:2|intcomma }}</td>
             </tr>
         </tbody>
         </table>
