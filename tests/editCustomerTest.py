@@ -13,8 +13,8 @@ class editCustomerTest(unittest.TestCase):
         pwd = "instructor1a"
         driver = self.driver
         driver.maximize_window()
-        driver.get("http://127.0.0.1:8000/accounts/login/")
-        time.sleep(3)
+        driver.get("https://foodserviceapp.herokuapp.com/accounts/login/")
+        time.sleep(1)
         # elem = driver.find_element_by_xpath("/html/body/section[1]/div/div/div/div/div/p[2]/a[1]").click()
         # time.sleep(3)
         elem = driver.find_element_by_id("id_username")
@@ -24,13 +24,13 @@ class editCustomerTest(unittest.TestCase):
         # Click Login button
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/input[2]").click()
         print("Logged in")
-        time.sleep(3)
+        time.sleep(1)
         # Click View details under Customer
         elem = driver.find_element_by_xpath("/html/body/div/div/div/div[2]/div/div/div/div/div[1]/div/div/p[2]/a").click()
-        time.sleep(5)
+        time.sleep(1)
         # Click Edit Customer button
         elem = driver.find_element_by_xpath("/html/body/div/div/div/div[3]/table/tbody/tr[4]/td[12]/a").click()
-        time.sleep(3)
+        time.sleep(1)
         elem = driver.find_element_by_id("id_organization")
         elem.clear()
         elem.send_keys("ABC Inc.")
@@ -46,14 +46,14 @@ class editCustomerTest(unittest.TestCase):
         elem = driver.find_element_by_id("id_phone_number")
         elem.clear()
         elem.send_keys("6784562378")
-        time.sleep(3)
+        time.sleep(1)
         # Click Update
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/button").click()
-        time.sleep(5)
-        print("Updated Customer successfully")
-        driver.get("http://127.0.0.1:8000")
         time.sleep(1)
-        driver.get("http://127.0.0.1:8000")
+        print("Updated Customer successfully")
+        # driver.get("http://127.0.0.1:8000")
+        # time.sleep(1)
+        # driver.get("http://127.0.0.1:8000")
 
     def tearDown(self):
         self.driver.close()

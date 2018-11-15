@@ -13,8 +13,8 @@ class addServiceTest(unittest.TestCase):
         pwd = "instructor1a"
         driver = self.driver
         driver.maximize_window()
-        driver.get("http://127.0.0.1:8000/accounts/login/")
-        time.sleep(3)
+        driver.get("https://foodserviceapp.herokuapp.com/accounts/login/")
+        time.sleep(2)
         # elem = driver.find_element_by_xpath("/html/body/section[1]/div/div/div/div/div/p[2]/a[1]").click()
         # time.sleep(3)
         elem = driver.find_element_by_id("id_username")
@@ -24,13 +24,13 @@ class addServiceTest(unittest.TestCase):
         # Click Login button
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/input[2]").click()
         print("Logged in")
-        time.sleep(3)
+        time.sleep(1)
         # Click View details under Service
         elem = driver.find_element_by_xpath("/html/body/div/div/div/div[2]/div/div/div/div/div[2]/div/div/p[2]/a").click()
-        time.sleep(5)
+        time.sleep(1)
         # Click Add Service button
         elem = driver.find_element_by_xpath("/html/body/div/div/div/div[3]/div/a/span").click()
-        time.sleep(3)
+        time.sleep(1)
         elem = driver.find_element_by_id("id_cust_name")
         elem.send_keys("Barbara York")
         time.sleep(1)
@@ -51,14 +51,14 @@ class addServiceTest(unittest.TestCase):
         # time.sleep(1)
         elem = driver.find_element_by_id("id_service_charge")
         elem.send_keys("260")
-        time.sleep(3)
+        time.sleep(1)
         # Click Save
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/button").click()
-        time.sleep(3)
+        time.sleep(2)
         print("Added Service successfully")
-        driver.get("http://127.0.0.1:8000")
-        time.sleep(1)
-        driver.get("http://127.0.0.1:8000")
+        # driver.get("http://127.0.0.1:8000")
+        # time.sleep(1)
+        # driver.get("http://127.0.0.1:8000")
 
 
     def tearDown(self):
