@@ -144,7 +144,7 @@ def product_new(request):
            product = form.save(commit=False)
            product.created_date = timezone.now()
            product.save()
-           products = Product.objects.filter(created_date__lte=timezone.now())
+           products = Service.objects.filter(created_date__lte=timezone.now())
            return render(request, 'crm/product_list.html',
                          {'products': products})
    else:
@@ -166,5 +166,3 @@ def summary(request, pk):
                                                 'sum_service_charge': sum_service_charge,
                                                 'sum_product_charge': sum_product_charge,
                                                 })
-
-
