@@ -23,7 +23,7 @@ class editProductTest(unittest.TestCase):
         elem.send_keys(pwd)
         # Click Login button
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/input[2]").click()
-        print("Logged in")
+        assert "Logged in"
         time.sleep(1)
         # Click View details under Product
         elem = driver.find_element_by_xpath("/html/body/div/div/div/div[2]/div/div/div/div/div[3]/div/div/p[2]/a").click()
@@ -54,10 +54,8 @@ class editProductTest(unittest.TestCase):
         # Click Update
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/button").click()
         time.sleep(1)
-        print("Updated Product successfully")
-        # driver.get("http://127.0.0.1:8000")
-        # time.sleep(1)
-        # driver.get("http://127.0.0.1:8000")
+        assert "Updated Product successfully"
+
 
     def tearDown(self):
         self.driver.close()

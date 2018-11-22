@@ -23,7 +23,7 @@ class login_logoutTest(unittest.TestCase):
         elem.send_keys(pwd)
         # Click Login button
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/input[2]").click()
-        print("Logged in")
+        assert "Logged in"
         time.sleep(1)
         # Click logout icon
         elem = driver.find_element_by_xpath("/html/body/nav/div/div[2]/ul[2]/li/a/span").click()
@@ -31,7 +31,7 @@ class login_logoutTest(unittest.TestCase):
         # Click logout button
         elem = driver.find_element_by_xpath("/html/body/nav/div/div[2]/ul[2]/li/ul/li/a").click()
         time.sleep(1)
-        print("Logged out successfully")
+        assert "Logged out successfully"
 
 
 

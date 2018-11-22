@@ -23,13 +23,13 @@ class editServiceTest(unittest.TestCase):
         elem.send_keys(pwd)
         # Click Login button
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/input[2]").click()
-        print("Logged in")
+        assert "Logged in"
         time.sleep(1)
         # Click View details under Service
         elem = driver.find_element_by_xpath("/html/body/div/div/div/div[2]/div/div/div/div/div[2]/div/div/p[2]/a").click()
-        time.sleep(1)
+        time.sleep(2)
         # Click Edit Service button
-        elem = driver.find_element_by_xpath("/html/body/div/div/div/div[3]/table/tbody/tr[6]/td[8]/a").click()
+        elem = driver.find_element_by_xpath("/html/body/div/div/div/div[3]/table/tbody/tr[5]/td[8]/a").click()
         time.sleep(2)
         # elem = driver.find_element_by_id("id_cust_name")
         # elem.send_keys("Barbara York")
@@ -43,7 +43,7 @@ class editServiceTest(unittest.TestCase):
         elem = driver.find_element_by_id("id_location")
         elem.clear()
         elem.send_keys("PKI Room 271")
-
+        time.sleep(1)
         # elem = driver.find_element_by_id("id_pickup_time")
         # elem.send_keys("2018-11-09 17:31:26")
         # time.sleep(1)
@@ -54,10 +54,8 @@ class editServiceTest(unittest.TestCase):
         # Click Update
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/button").click()
         time.sleep(2)
-        print("Updated Service successfully")
-        # driver.get("http://127.0.0.1:8000")
-        # time.sleep(1)
-        # driver.get("http://127.0.0.1:8000")
+        assert "Updated Service successfully"
+
 
     def tearDown(self):
         self.driver.close()

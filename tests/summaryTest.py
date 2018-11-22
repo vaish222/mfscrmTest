@@ -23,7 +23,7 @@ class summaryTest(unittest.TestCase):
         elem.send_keys(pwd)
         # Click Login button
         elem = driver.find_element_by_xpath("/html/body/div/div/div/form/input[2]").click()
-        print("Logged in")
+        assert "Logged in"
         time.sleep(1)
         # Click View details under Customer
         elem = driver.find_element_by_xpath("/html/body/div/div/div/div[2]/div/div/div/div/div[1]/div/div/p[2]/a").click()
@@ -31,10 +31,7 @@ class summaryTest(unittest.TestCase):
         # Click Summary button
         elem = driver.find_element_by_xpath("/html/body/div/div/div/div[3]/table/tbody/tr[1]/td[14]/a").click()
         time.sleep(1)
-        print("Summary is shown successfully")
-        #driver.get("http://127.0.0.1:8000")
-        # time.sleep(1)
-        # driver.get("http://127.0.0.1:8000")
+        assert "Summary is shown successfully"
 
 
     def tearDown(self):

@@ -80,7 +80,7 @@ class readAndAddCustomerTest(unittest.TestCase):
             phone = row[11]
             elem = driver.find_element_by_id("id_phone_number")
             elem.send_keys(str(phone))
-
+            #click save
             elem = driver.find_element_by_xpath("/html/body/div/div/div/form/button").click()
             time.sleep(1)
 
